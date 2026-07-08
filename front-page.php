@@ -11,10 +11,10 @@ get_header();
             </a>
             
                             <nav class="hero-nav">
-                    <a href="<?php echo home_url('/'); ?>" class="hero-nav-link">HOME</a>
+                    <a href="<?php echo home_url('/'); ?>" class="hero-nav-link">FORSIDE</a>
                     <a href="<?php echo home_url('/#menu'); ?>" class="hero-nav-link">MENU</a>
-                    <a href="<?php echo home_url('/about'); ?>" class="hero-nav-link">ABOUT LAMFUZ</a>
-                    <a href="<?php echo home_url('/contact'); ?>" class="hero-nav-link">CONTACT</a>
+                    <a href="<?php echo home_url('/about'); ?>" class="hero-nav-link">OM LAMFUZ</a>
+                    <a href="<?php echo home_url('/contact'); ?>" class="hero-nav-link">KONTAKT</a>
                 </nav>
         </div>
 
@@ -52,10 +52,10 @@ get_header();
 
     <!-- Navigation Links -->
     <div class="mobile-nav-links">
-        <a href="#" class="mobile-nav-link">HOME</a>
+        <a href="#" class="mobile-nav-link">FORSIDE</a>
         <a href="#menu" class="mobile-nav-link">MENU</a>
         <a href="<?php echo home_url('/about'); ?>" class="mobile-nav-link">OM LAMFUZ</a>
-        <a href="<?php echo home_url('/contact'); ?>" class="mobile-nav-link">CONTACT</a>
+        <a href="<?php echo home_url('/contact'); ?>" class="mobile-nav-link">KONTAKT</a>
     </div>
 
     <!-- Bottom elements of overlay -->
@@ -249,6 +249,9 @@ get_header();
 </main>
 <?php
 get_footer();
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-﻿/* CSS Variables */
+/* CSS Variables */
 :root {
     --primary-color: #a89066;
     --red-cta: #e52424;
@@ -815,10 +815,7 @@ body {
     .hero-nav {
         display: none;
     }
-    .lang-selector {
-        display: flex !important;
-        order: 2;
-    }
+    .hero-header-right .lang-selector { display: none !important; }
     .mobile-menu-toggle {
         display: flex;
         order: 3;
@@ -844,9 +841,8 @@ body {
 }
 
 @media (max-width: 768px) {
-    .hero-header {
-        padding: 1rem 1.25rem;
-    }
+    .hero-header { padding: 0; }
+    .header-container { padding: 0.75rem 1rem; }
 
     .hero-logo-title {
         font-size: 1.5rem;
@@ -1695,3 +1691,23 @@ body {
 
 
 
+
+/* Hide Google Translate Bar */
+body { top: 0 !important; }
+.skiptranslate { display: none !important; }
+#goog-gt-tt { display: none !important; }
+.goog-te-banner-frame { display: none !important; }
+.goog-te-menu-value { display: none !important; }
+.goog-tooltip { display: none !important; }
+.goog-tooltip:hover { display: none !important; }
+.goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+
+@media (max-width: 992px) {
+    .hero-header-right .btn-header-book { 
+        display: inline-block !important; 
+        padding: 0.5rem 0.8rem; 
+        font-size: 0.65rem; 
+        margin-right: 0.5rem; 
+        white-space: nowrap !important; 
+    }
+}

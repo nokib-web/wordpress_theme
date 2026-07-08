@@ -1,4 +1,4 @@
-﻿// Prevent browser from restoring scroll position on reload
+// Prevent browser from restoring scroll position on reload
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
@@ -116,32 +116,83 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Language Translator Logic
-    const langSelector = document.querySelector('.lang-selector');
-    if (langSelector) {
+    const langSelectors = document.querySelectorAll('.lang-selector, .mobile-lang-selector');
+    
+    function getCookie(name) {
+        const value = "; " + document.cookie;
+        const parts = value.split("; " + name + "=");
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+    }
+
+    const googtrans = getCookie('googtrans');
+    let currentLang = 'da';
+    if (googtrans && googtrans.endsWith('/en')) {
+        currentLang = 'en';
+    }
+
+    function doTranslate(langCode) {
+        document.cookie = "googtrans=/da/" + langCode + "; path=/;";
+        document.cookie = "googtrans=/da/" + langCode + "; domain=" + window.location.hostname + "; path=/;";
+        
+        const select = document.querySelector('select.goog-te-combo');
+        if (select) {
+            select.value = langCode;
+            select.dispatchEvent(new Event('change'));
+        } else {
+            setTimeout(() => {
+                const selectRetry = document.querySelector('select.goog-te-combo');
+                if (selectRetry) {
+                    selectRetry.value = langCode;
+                    selectRetry.dispatchEvent(new Event('change'));
+                } else {
+                    window.location.reload();
+                }
+            }, 500);
+        }
+    }
+
+    langSelectors.forEach(langSelector => {
         const langDA = langSelector.querySelector('span:first-child');
         const langEN = langSelector.querySelector('span:last-child');
         
-        function setLanguage(langCode) {
-            const select = document.querySelector('select.goog-te-combo');
-            if (select) {
-                select.value = langCode;
-                select.dispatchEvent(new Event('change'));
+        if(langDA && langEN) {
+            // Set initial active state based on cookie
+            if (currentLang === 'en') {
+                langEN.classList.add('active');
+                langDA.classList.remove('active');
+            } else {
+                langDA.classList.add('active');
+                langEN.classList.remove('active');
             }
-        }
-        
-        langDA.addEventListener('click', () => {
-            setLanguage('da');
-            langDA.classList.add('active');
-            langEN.classList.remove('active');
-        });
-        
-        langEN.addEventListener('click', () => {
-            setLanguage('en');
-            langEN.classList.add('active');
-            langDA.classList.remove('active');
-        });
-    }
 
+            langDA.addEventListener('click', () => {
+                if(currentLang !== 'da') {
+                    currentLang = 'da';
+                    langSelectors.forEach(ls => {
+                        const lDA = ls.querySelector('span:first-child');
+                        const lEN = ls.querySelector('span:last-child');
+                        if (lDA && lEN) { lDA.classList.add('active'); lEN.classList.remove('active'); }
+                    });
+                    doTranslate('da');
+                }
+            });
+            
+            langEN.addEventListener('click', () => {
+                if(currentLang !== 'en') {
+                    currentLang = 'en';
+                    langSelectors.forEach(ls => {
+                        const lDA = ls.querySelector('span:first-child');
+                        const lEN = ls.querySelector('span:last-child');
+                        if (lDA && lEN) { lEN.classList.add('active'); lDA.classList.remove('active'); }
+                    });
+                    doTranslate('en');
+                }
+            });
+        }
+    });
+
+});
     
 // Initialize Swiper
 document.addEventListener('DOMContentLoaded', function() {
@@ -160,3 +211,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+

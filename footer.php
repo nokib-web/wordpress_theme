@@ -52,7 +52,7 @@
     <div id="google_translate_element" style="display:none;"></div>
     <script type="text/javascript">
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'da,en', autoDisplay: false}, 'google_translate_element');
+      new google.translate.TranslateElement({pageLanguage: 'da', includedLanguages: 'da,en', autoDisplay: false}, 'google_translate_element');
     }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -61,4 +61,5 @@
     <?php wp_footer(); ?>
 </body>
 </html>
+
 
