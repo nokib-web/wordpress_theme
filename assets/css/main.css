@@ -21,7 +21,19 @@ body {
     color: var(--text-light);
     margin: 0;
     overflow-x: hidden;
-    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-main {
+    flex: 1;
+}
+
+/* Inner pages background fix */
+.page-template-page-about .site-main,
+.page-template-page-contact .site-main {
+    background-color: #ffffff;
 }
 
 * {

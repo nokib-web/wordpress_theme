@@ -1,72 +1,9 @@
-﻿<?php
+<?php
+/**
+ * Template Name: Front Page
+ */
 get_header();
 ?>
-<!-- Top Header Navigation -->
-<header class="hero-header" id="siteHeader">
-    <div class="header-container">
-        <div class="header-left">
-            <a href="<?php echo home_url('/'); ?>" class="hero-logo">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Lamfuz-Logo-Tagline-White-RGB-copy (2) - Copy.webp" class="logo-white" alt="Lamfuz Nepali Cuisine">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/output-onlinepngtools (1) - Copy.webp" class="logo-color" alt="Lamfuz Nepali Cuisine">
-            </a>
-            
-                            <nav class="hero-nav">
-                    <a href="<?php echo home_url('/'); ?>" class="hero-nav-link">FORSIDE</a>
-                    <a href="<?php echo home_url('/#menu'); ?>" class="hero-nav-link">MENU</a>
-                    <a href="<?php echo home_url('/about'); ?>" class="hero-nav-link">OM LAMFUZ</a>
-                    <a href="<?php echo home_url('/contact'); ?>" class="hero-nav-link">KONTAKT</a>
-                </nav>
-        </div>
-
-        <div class="hero-header-right">
-            <div class="lang-selector notranslate">
-                <span class="active">DA</span>
-                <span>EN</span>
-            </div>
-            <a href="#book" class="btn-header-book">BOOK ET BORD</a>
-            
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-</header>
-
-<!-- Mobile Navigation Drawer Overlay -->
-<div class="mobile-nav-overlay" id="mobileNavOverlay">
-    <!-- Top bar inside overlay -->
-    <div class="mobile-nav-header">
-        <a href="<?php echo home_url('/'); ?>" class="hero-logo">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Lamfuz-Logo-Tagline-White-RGB-copy (2) - Copy.webp" class="logo-white" alt="Lamfuz Nepali Cuisine">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/output-onlinepngtools (1) - Copy.webp" class="logo-color" alt="Lamfuz Nepali Cuisine">
-        </a>
-        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close Menu">
-            <svg viewBox="0 0 24 24" width="24" height="24">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
-    </div>
-
-    <!-- Navigation Links -->
-    <div class="mobile-nav-links">
-        <a href="#" class="mobile-nav-link">FORSIDE</a>
-        <a href="#menu" class="mobile-nav-link">MENU</a>
-        <a href="<?php echo home_url('/about'); ?>" class="mobile-nav-link">OM LAMFUZ</a>
-        <a href="<?php echo home_url('/contact'); ?>" class="mobile-nav-link">KONTAKT</a>
-    </div>
-
-    <!-- Bottom elements of overlay -->
-    <div class="mobile-nav-footer">
-        <div class="mobile-lang-selector">
-            <span class="active">DA</span>
-            <span>EN</span>
-        </div>
-        <a href="#book" class="btn-mobile-book">BOOK ET BORD</a>
-    </div>
-</div>
 
 <main id="primary" class="site-main">
     <!-- Hero Section with Background Video -->
