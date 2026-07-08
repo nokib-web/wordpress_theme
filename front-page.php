@@ -13,7 +13,7 @@ get_header();
             <nav class="hero-nav">
                 <a href="#" class="hero-nav-link">FRONT</a>
                 <a href="#menu" class="hero-nav-link">MENU</a>
-                <a href="#about" class="hero-nav-link">ABOUT LAMFUZ</a>
+                <a href="<?php echo home_url('/about'); ?>" class="hero-nav-link">ABOUT LAMFUZ</a>
                 <a href="#kontakt" class="hero-nav-link">CONTACT</a>
             </nav>
         </div>
@@ -54,7 +54,7 @@ get_header();
     <div class="mobile-nav-links">
         <a href="#" class="mobile-nav-link">FORSIDE</a>
         <a href="#menu" class="mobile-nav-link">MENU</a>
-        <a href="#about" class="mobile-nav-link">OM LAMFUZ</a>
+        <a href="<?php echo home_url('/about'); ?>" class="mobile-nav-link">OM LAMFUZ</a>
         <a href="#kontakt" class="mobile-nav-link">KONTAKT</a>
     </div>
 
@@ -83,7 +83,7 @@ get_header();
 
 
         <!-- Vertical Sidebar Scroll Indicator (Right Side) -->
-        <a href="#about" class="hero-scroll-side">
+        <a href="<?php echo home_url('/about'); ?>" class="hero-scroll-side">
             <span class="hero-vertical-text">OPDAG LAMFUZ</span>
             <div class="hero-scroll-arrow">
                 <svg viewBox="0 0 24 24">
@@ -123,7 +123,7 @@ get_header();
                 <p class="gallery-text">Are you looking for exotic and tasty food? Would you like to challenge yourself with a rollercoaster ride for your taste buds?</p>
                 <p class="gallery-text">Then Lamfuz is for you!</p>
                 <p class="gallery-text">At lamfuz we are passionate about cooking inspired by the explosion of flavors that Nepalese cuisine offers. We offer DINE IN, takeout and catering for those of you who long for exotic food and new flavors - in a healthy way and without emptying your wallet!</p>
-                <a href="#about" class="btn-hero-red" style="margin-top: 1.5rem; text-transform: uppercase; font-size: 0.85rem; padding: 1rem 1.8rem;">READ MORE ABOUT US</a>
+                <a href="<?php echo home_url('/about'); ?>" class="btn-hero-red" style="margin-top: 1.5rem; text-transform: uppercase; font-size: 0.85rem; padding: 1rem 1.8rem;">READ MORE ABOUT US</a>
             </div>
             <div class="gallery-images">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/DhalBhatPlatter_9-16_Above.webp" alt="Dhal Bhat Platter" class="gallery-img">

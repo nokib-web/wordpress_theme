@@ -17,7 +17,7 @@
                     <h4>MENU</h4>
                     <a href="#">FRONT</a>
                     <a href="#menu">MENU</a>
-                    <a href="#about">ABOUT LAMFUZ</a>
+                    <a href="<?php echo home_url('/about'); ?>">ABOUT LAMFUZ</a>
                     <a href="#kontakt">CONTACT</a>
                 </div>
                 <div class="footer-col">

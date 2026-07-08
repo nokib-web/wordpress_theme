@@ -48,7 +48,7 @@ function cmc_register_patterns() {
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 <!-- wp:button {"className":"is-style-outline welcome-button"} -->
-<div class="wp-block-button is-style-outline welcome-button"><a class="wp-block-button__link wp-element-button" href="#about">LEARN MORE ABOUT US</a></div>
+<div class="wp-block-button is-style-outline welcome-button"><a class="wp-block-button__link wp-element-button" href="<?php echo home_url('/about'); ?>">LEARN MORE ABOUT US</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
