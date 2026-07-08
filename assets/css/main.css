@@ -1,4 +1,4 @@
-/* CSS Variables */
+﻿/* CSS Variables */
 :root {
     --primary-color: #a89066;
     --red-cta: #e52424;
@@ -586,7 +586,7 @@ body {
 }
 .welcome-image img {
     max-width: 100%;
-    height: auto;
+    height: 600px;
     box-shadow: 0 5px 25px rgba(0,0,0,0.05);
     border-radius: 4px;
 }
@@ -1506,7 +1506,7 @@ body {
 
 .about-intro-image img {
     width: 100%;
-    height: auto;
+    height: 600px;
     display: block;
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
 }
@@ -1554,7 +1554,7 @@ body {
 
 .about-split-image img {
     width: 100%;
-    height: auto;
+    height: 600px;
     object-fit: cover;
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
 }
@@ -1644,3 +1644,54 @@ body {
         text-align: left;
     }
 }
+
+/* Logo Image Styles */
+.hero-logo img {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+.hero-logo .logo-color {
+    display: none;
+}
+.hero-header.sticky .hero-logo .logo-white {
+    display: none;
+}
+.hero-header.sticky .hero-logo .logo-color {
+    display: block;
+}
+.mobile-nav-header .hero-logo .logo-white {
+    display: none;
+}
+.mobile-nav-header .hero-logo .logo-color {
+    display: block;
+}
+
+/* Swiper Gallery Adjustments */
+.gallery-section .swiper {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 2rem;
+}
+.gallery-section .swiper-slide {
+    width: 85%; /* Mobile */
+}
+@media (min-width: 768px) {
+    .gallery-section .swiper-slide {
+        width: 38%;
+    }
+
+}
+.gallery-section .gallery-img, .gallery-section .gallery-img-new {
+    height: 600px;
+    width: 100%;
+    
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+
+
+
+

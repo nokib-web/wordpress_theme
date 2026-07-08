@@ -1,4 +1,4 @@
-// Prevent browser from restoring scroll position on reload
+﻿// Prevent browser from restoring scroll position on reload
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
@@ -142,99 +142,21 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Gallery Horizontal Scroll by Mouse Drag & Infinite Loop
-    const sliders = document.querySelectorAll('.gallery-images');
     
-    sliders.forEach(slider => {
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-        
-        // Clone elements for infinite scroll effect (clone twice to be safe)
-        const children = Array.from(slider.children);
-        if (children.length === 0) return;
-        
-        const originalCount = children.length;
-        
-        // Append a set of clones
-        children.forEach(child => {
-            const clone = child.cloneNode(true);
-            clone.classList.add('clone-appended');
-            slider.appendChild(clone);
+// Initialize Swiper
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.querySelector('.mySwiper')) {
+        var swiper = new Swiper('.mySwiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 24,
+            freeMode: true,
+            loop: true,
+            speed: 800,
+            grabCursor: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
         });
-        
-        // Prepend a set of clones
-        children.slice().reverse().forEach(child => {
-            const clone = child.cloneNode(true);
-            clone.classList.add('clone-prepended');
-            slider.prepend(clone);
-        });
-        
-        let wrapWidth = 0;
-        
-        function updateWrapWidth() {
-            // First original element is at index `originalCount`
-            const firstOriginal = slider.children[originalCount];
-            // First appended clone is at index `originalCount * 2`
-            const firstAppendedClone = slider.children[originalCount * 2];
-            
-            if (firstOriginal && firstAppendedClone) {
-                wrapWidth = firstAppendedClone.offsetLeft - firstOriginal.offsetLeft;
-                
-                // Initialize scroll position to the first original element if we are at 0
-                if (slider.scrollLeft === 0 || slider.scrollLeft < 10) {
-                    slider.scrollLeft = firstOriginal.offsetLeft - slider.offsetLeft;
-                }
-            }
-        }
-        
-        // Wait a bit for images to render and calculate widths
-        setTimeout(updateWrapWidth, 300);
-        window.addEventListener('resize', updateWrapWidth);
-        
-        slider.addEventListener('mousedown', (e) => {
-            isDown = true;
-            slider.classList.add('active');
-            startX = e.pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
-        });
-        
-        slider.addEventListener('mouseleave', () => {
-            isDown = false;
-            slider.classList.remove('active');
-        });
-        
-        slider.addEventListener('mouseup', () => {
-            isDown = false;
-            slider.classList.remove('active');
-        });
-        
-        slider.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2; 
-            slider.scrollLeft = scrollLeft - walk;
-        });
-        
-        slider.addEventListener('scroll', () => {
-            if (!wrapWidth) return;
-            
-            const firstOriginal = slider.children[originalCount];
-            if (!firstOriginal) return;
-            
-            const startScroll = firstOriginal.offsetLeft - slider.offsetLeft;
-            
-            // Seamlessly wrap around when scrolling too far left or right
-            if (slider.scrollLeft < startScroll - wrapWidth / 2) {
-                slider.style.scrollSnapType = 'none'; // Temporarily disable snapping to avoid jump glitches
-                slider.scrollLeft += wrapWidth;
-                setTimeout(() => slider.style.scrollSnapType = '', 50);
-            } else if (slider.scrollLeft > startScroll + wrapWidth / 2) {
-                slider.style.scrollSnapType = 'none';
-                slider.scrollLeft -= wrapWidth;
-                setTimeout(() => slider.style.scrollSnapType = '', 50);
-            }
-        });
-    });
+    }
 });

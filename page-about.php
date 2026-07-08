@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: About
  */
@@ -98,3 +98,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+

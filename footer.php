@@ -1,4 +1,4 @@
-    <footer class="site-footer">
+﻿    <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-columns">
                 <div class="footer-col">
@@ -15,10 +15,10 @@
                 </div>
                 <div class="footer-col">
                     <h4>MENU</h4>
-                    <a href="#">FRONT</a>
+                    <a href="#">HOME</a>
                     <a href="#menu">MENU</a>
                     <a href="<?php echo home_url('/about'); ?>">ABOUT LAMFUZ</a>
-                    <a href="#kontakt">CONTACT</a>
+                    <a href="<?php echo home_url('/contact'); ?>">CONTACT</a>
                 </div>
                 <div class="footer-col">
                     <h4>ABOUT</h4>
@@ -56,7 +56,9 @@
     }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js"></script>
     <?php wp_footer(); ?>
 </body>
 </html>
+

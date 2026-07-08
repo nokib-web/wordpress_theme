@@ -1,21 +1,21 @@
-<?php
+﻿<?php
 get_header();
 ?>
 <!-- Top Header Navigation -->
 <header class="hero-header" id="siteHeader">
     <div class="header-container">
         <div class="header-left">
-            <a href="#" class="hero-logo">
-                <span class="hero-logo-title">LAMFUZ</span>
-                <span class="hero-logo-subtitle">NEPALI CUISINE</span>
+            <a href="<?php echo home_url('/'); ?>" class="hero-logo">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Lamfuz-Logo-Tagline-White-RGB-copy (2) - Copy.webp" class="logo-white" alt="Lamfuz Nepali Cuisine">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/output-onlinepngtools (1) - Copy.webp" class="logo-color" alt="Lamfuz Nepali Cuisine">
             </a>
             
-            <nav class="hero-nav">
-                <a href="#" class="hero-nav-link">FRONT</a>
-                <a href="#menu" class="hero-nav-link">MENU</a>
-                <a href="<?php echo home_url('/about'); ?>" class="hero-nav-link">ABOUT LAMFUZ</a>
-                <a href="#kontakt" class="hero-nav-link">CONTACT</a>
-            </nav>
+                            <nav class="hero-nav">
+                    <a href="<?php echo home_url('/'); ?>" class="hero-nav-link">HOME</a>
+                    <a href="<?php echo home_url('/#menu'); ?>" class="hero-nav-link">MENU</a>
+                    <a href="<?php echo home_url('/about'); ?>" class="hero-nav-link">ABOUT LAMFUZ</a>
+                    <a href="<?php echo home_url('/contact'); ?>" class="hero-nav-link">CONTACT</a>
+                </nav>
         </div>
 
         <div class="hero-header-right">
@@ -38,9 +38,9 @@ get_header();
 <div class="mobile-nav-overlay" id="mobileNavOverlay">
     <!-- Top bar inside overlay -->
     <div class="mobile-nav-header">
-        <a href="#" class="hero-logo">
-            <span class="hero-logo-title">LAMFUZ</span>
-            <span class="hero-logo-subtitle">NEPALI CUISINE</span>
+        <a href="<?php echo home_url('/'); ?>" class="hero-logo">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Lamfuz-Logo-Tagline-White-RGB-copy (2) - Copy.webp" class="logo-white" alt="Lamfuz Nepali Cuisine">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/output-onlinepngtools (1) - Copy.webp" class="logo-color" alt="Lamfuz Nepali Cuisine">
         </a>
         <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close Menu">
             <svg viewBox="0 0 24 24" width="24" height="24">
@@ -52,10 +52,10 @@ get_header();
 
     <!-- Navigation Links -->
     <div class="mobile-nav-links">
-        <a href="#" class="mobile-nav-link">FORSIDE</a>
+        <a href="#" class="mobile-nav-link">HOME</a>
         <a href="#menu" class="mobile-nav-link">MENU</a>
         <a href="<?php echo home_url('/about'); ?>" class="mobile-nav-link">OM LAMFUZ</a>
-        <a href="#kontakt" class="mobile-nav-link">KONTAKT</a>
+        <a href="<?php echo home_url('/contact'); ?>" class="mobile-nav-link">CONTACT</a>
     </div>
 
     <!-- Bottom elements of overlay -->
@@ -249,4 +249,7 @@ get_header();
 </main>
 <?php
 get_footer();
+
+
+
 
