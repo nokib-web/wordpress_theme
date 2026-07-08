@@ -1735,3 +1735,9 @@ body { top: 0 !important; }
         height: 32px;
     }
 }
+
+/* WordPress Menu Overrides */
+.hero-nav li, .mobile-nav-links li, .footer-col li { display: inline-block; margin: 0; padding: 0; list-style: none; }
+.footer-col li { display: block; margin-bottom: 0.5rem; }
+.hero-nav .menu-item a { text-decoration: none; }
+.footer-col .menu-item a { text-decoration: none; }

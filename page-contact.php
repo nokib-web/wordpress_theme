@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Template Name: Contact
  */
@@ -7,7 +7,7 @@ get_header();
 <main id="primary" class="site-main">
         
         <!-- Hero Banner -->
-        <section class="hero-section hero-about" style="background-image: url('assets/images/Space-1_16-9_Side.webp'); height: 60vh; min-height: 400px; display: flex; align-items: flex-end; padding: 4rem 2rem;">
+        <section class="hero-section hero-about" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/Space-1_16-9_Side.webp'); height: 60vh; min-height: 400px; display: flex; align-items: flex-end; padding: 4rem 2rem;">
             <div class="hero-overlay"></div>
             <div class="about-hero-content" style="position: relative; z-index: 2; width: 100%; max-width: 1400px; margin: 0 auto;">
                 <h1 style="color: #fff; font-family: var(--font-heading); font-size: 4rem; letter-spacing: 0.05em; text-transform: uppercase;">KONTAKT</h1>
@@ -86,12 +86,12 @@ get_header();
                 </div>
                 <div class="swiper mySwiper gallery-images-container" style="overflow: hidden; flex: 1;">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" style="width: auto;"><img src="assets/images/DhalBhatPlatter_9-16_Above.webp" alt="Dhal Bhat Platter" class="gallery-img"></div>
-                        <div class="swiper-slide" style="width: auto;"><img src="assets/images/JholMoMo_9-16_Above.webp" alt="Jhol MoMo" class="gallery-img"></div>
-                        <div class="swiper-slide" style="width: auto;"><img src="assets/images/ChickenChoila_9-16_Above.webp" alt="Chicken Choila" class="gallery-img"></div>
-                        <div class="swiper-slide" style="width: auto;"><img src="assets/images/ChowMein_9-16_Above.webp" alt="Chow Mein" class="gallery-img"></div>
-                        <div class="swiper-slide" style="width: auto;"><img src="assets/images/FriedRice_9-16_Above.webp" alt="Fried Rice" class="gallery-img"></div>
-                        <div class="swiper-slide" style="width: auto;"><img src="assets/images/SaladBowl_9-16_Above.webp" alt="Salad Bowl" class="gallery-img"></div>
+                        <div class="swiper-slide" style="width: auto;"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/DhalBhatPlatter_9-16_Above.webp" alt="Dhal Bhat Platter" class="gallery-img"></div>
+                        <div class="swiper-slide" style="width: auto;"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/JholMoMo_9-16_Above.webp" alt="Jhol MoMo" class="gallery-img"></div>
+                        <div class="swiper-slide" style="width: auto;"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/ChickenChoila_9-16_Above.webp" alt="Chicken Choila" class="gallery-img"></div>
+                        <div class="swiper-slide" style="width: auto;"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/ChowMein_9-16_Above.webp" alt="Chow Mein" class="gallery-img"></div>
+                        <div class="swiper-slide" style="width: auto;"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/FriedRice_9-16_Above.webp" alt="Fried Rice" class="gallery-img"></div>
+                        <div class="swiper-slide" style="width: auto;"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/SaladBowl_9-16_Above.webp" alt="Salad Bowl" class="gallery-img"></div>
                     </div>
                 </div>
 

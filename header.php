@@ -22,10 +22,20 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/output-onlinepngtools (1) - Copy.webp" class="logo-color" alt="Lamfuz Nepali Cuisine">
                 </a>
                 <nav class="hero-nav">
-                    <a href="<?php echo home_url('/'); ?>" class="hero-nav-link">FORSIDE</a>
-                    <a href="<?php echo home_url('/#menu'); ?>" class="hero-nav-link">MENU</a>
-                    <a href="<?php echo home_url('/about'); ?>" class="hero-nav-link">OM LAMFUZ</a>
-                    <a href="<?php echo home_url('/contact'); ?>" class="hero-nav-link">KONTAKT</a>
+                    <?php
+                    if ( has_nav_menu( 'primary-menu' ) ) {
+                        wp_nav_menu( array(
+                            'theme_location' => 'primary-menu',
+                            'container'      => false,
+                            'items_wrap'     => '%3$s', // removes the <ul> wrapper
+                        ) );
+                    } else {
+                    ?>
+                        <a href="<?php echo home_url('/'); ?>" class="hero-nav-link">FORSIDE</a>
+                        <a href="<?php echo home_url('/#menu'); ?>" class="hero-nav-link">MENU</a>
+                        <a href="<?php echo home_url('/about'); ?>" class="hero-nav-link">OM LAMFUZ</a>
+                        <a href="<?php echo home_url('/contact'); ?>" class="hero-nav-link">KONTAKT</a>
+                    <?php } ?>
                 </nav>
             </div>
 
@@ -61,10 +71,20 @@
         </div>
 
         <div class="mobile-nav-links">
-            <a href="<?php echo home_url('/'); ?>" class="mobile-nav-link">FORSIDE</a>
-            <a href="<?php echo home_url('/#menu'); ?>" class="mobile-nav-link">MENU</a>
-            <a href="<?php echo home_url('/about'); ?>" class="mobile-nav-link">OM LAMFUZ</a>
-            <a href="<?php echo home_url('/contact'); ?>" class="mobile-nav-link">KONTAKT</a>
+            <?php
+            if ( has_nav_menu( 'mobile-menu' ) ) {
+                wp_nav_menu( array(
+                    'theme_location' => 'mobile-menu',
+                    'container'      => false,
+                    'items_wrap'     => '%3$s', // removes the <ul> wrapper
+                ) );
+            } else {
+            ?>
+                <a href="<?php echo home_url('/'); ?>" class="mobile-nav-link">FORSIDE</a>
+                <a href="<?php echo home_url('/#menu'); ?>" class="mobile-nav-link">MENU</a>
+                <a href="<?php echo home_url('/about'); ?>" class="mobile-nav-link">OM LAMFUZ</a>
+                <a href="<?php echo home_url('/contact'); ?>" class="mobile-nav-link">KONTAKT</a>
+            <?php } ?>
         </div>
 
         <div class="mobile-nav-footer">

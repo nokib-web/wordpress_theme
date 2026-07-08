@@ -1,4 +1,4 @@
-﻿    <footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-columns">
                 <div class="footer-col">
@@ -15,14 +15,24 @@
                 </div>
                 <div class="footer-col">
                     <h4>MENU</h4>
-                    <a href="#">HOME</a>
-                    <a href="#menu">MENU</a>
-                    <a href="<?php echo home_url('/about'); ?>">ABOUT LAMFUZ</a>
-                    <a href="<?php echo home_url('/contact'); ?>">CONTACT</a>
+                    <?php
+                    if ( has_nav_menu( 'footer-menu' ) ) {
+                        wp_nav_menu( array(
+                            'theme_location' => 'footer-menu',
+                            'container'      => false,
+                            'items_wrap'     => '%3$s', // removes the <ul> wrapper
+                        ) );
+                    } else {
+                    ?>
+                        <a href="<?php echo home_url('/'); ?>">HOME</a>
+                        <a href="<?php echo home_url('/#menu'); ?>">MENU</a>
+                        <a href="<?php echo home_url('/about'); ?>">ABOUT LAMFUZ</a>
+                        <a href="<?php echo home_url('/contact'); ?>">CONTACT</a>
+                    <?php } ?>
                 </div>
                 <div class="footer-col">
                     <h4>ABOUT</h4>
-                    <a href="#">DISCOVER MORE FROM LAMFUZ</a>
+                    <a href="<?php echo home_url('/about'); ?>">DISCOVER MORE FROM LAMFUZ</a>
                 </div>
                 <div class="footer-col">
                     <h4>CONTACT</h4>
@@ -57,7 +67,6 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js"></script>
     <?php wp_footer(); ?>
 </body>
 </html>
