@@ -199,14 +199,19 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('.mySwiper')) {
         var swiper = new Swiper('.mySwiper', {
             slidesPerView: 'auto',
-            spaceBetween: 24,
-            freeMode: true,
+            spaceBetween: 20,
             loop: true,
-            speed: 800,
+            speed: 3000,
             grabCursor: true,
+            allowTouchMove: true,
             autoplay: {
-                delay: 2500,
+                delay: 0,
                 disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            freeMode: {
+                enabled: true,
+                momentum: false,
             },
         });
     }

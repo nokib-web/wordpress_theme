@@ -17,7 +17,7 @@ html {
 
 body {
     font-family: var(--font-body);
-    background-color: #000;
+    background-color: #b2512b;
     color: var(--text-light);
     margin: 0;
     overflow-x: hidden;
@@ -1071,36 +1071,27 @@ body {
     align-items: flex-start;
 }
 
-.gallery-images {
+.gallery-swiper {
     flex: 1;
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    padding: 1rem 2rem 2rem 0;
-    cursor: grab;
+    overflow: hidden; /* Swiper handles overflow */
+    width: 100%;
 }
 
-.gallery-images::-webkit-scrollbar {
-    display: none;
-}
-
-.gallery-images.active {
-    cursor: grabbing;
-    scroll-snap-type: none;
+.gallery-swiper .swiper-wrapper {
+    -webkit-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
 }
 
 .gallery-img {
-    flex: 0 0 42%;
     height: 750px;
+    width: 100%;
     object-fit: cover;
-    scroll-snap-align: start;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     border-radius: 2px;
-    pointer-events: none;
-    -webkit-user-drag: none;
+}
+
+.gallery-swiper .swiper-slide {
+    width: 42%;
 }
 
 /* Make image styling similar to image border we see in the design (none, just shadow or thin border) */
@@ -1153,17 +1144,14 @@ body {
         text-align: center;
         margin: 0 auto 1.5rem;
     }
-    .gallery-images {
-        flex-direction: row;
-        width: calc(100% + 3rem);
-        margin-left: -1.5rem;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-        gap: 1rem;
+    .gallery-swiper {
+        width: 100%;
     }
     .gallery-img {
-        flex: 0 0 85%;
         height: 500px;
+    }
+    .gallery-swiper .swiper-slide {
+        width: 85%;
     }
 }
 
