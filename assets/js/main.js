@@ -201,17 +201,14 @@ document.addEventListener('DOMContentLoaded', function() {
             slidesPerView: 'auto',
             spaceBetween: 20,
             loop: true,
-            speed: 3000,
             grabCursor: true,
             allowTouchMove: true,
-            autoplay: {
-                delay: 0,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
+            mousewheel: {
+                forceToAxis: true,
             },
             freeMode: {
                 enabled: true,
-                momentum: false,
+                momentum: true,
             },
         });
     }

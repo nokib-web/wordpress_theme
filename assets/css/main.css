@@ -491,8 +491,13 @@ body {
 /* Bottom Action Buttons (Left Side) */
 .hero-bottom-actions {
     position: absolute;
-    left: 3.5rem;
     bottom: 3.5rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 100%;
+    padding: 0 3.5rem;
     z-index: 10;
     display: flex;
     align-items: center;
@@ -889,9 +894,12 @@ body {
 
     /* Stack bottom action buttons on mobile */
     .hero-bottom-actions {
-        left: 1.5rem;
-        right: 1.5rem;
         bottom: 1.5rem;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: none;
+        padding: 0 1.5rem;
         flex-direction: column;
         gap: 0.75rem;
     }
@@ -1075,11 +1083,6 @@ body {
     flex: 1;
     overflow: hidden; /* Swiper handles overflow */
     width: 100%;
-}
-
-.gallery-swiper .swiper-wrapper {
-    -webkit-transition-timing-function: linear !important;
-    transition-timing-function: linear !important;
 }
 
 .gallery-img {
