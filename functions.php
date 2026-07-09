@@ -1,12 +1,14 @@
 <?php
 function cmc_enqueue_scripts() {
-    $main_css_ver = file_exists(get_template_directory() . '/assets/css/main.css') ? filemtime(get_template_directory() . '/assets/css/main.css') : '1.0.0';
-    $style_css_ver = file_exists(get_stylesheet_directory() . '/style.css') ? filemtime(get_stylesheet_directory() . '/style.css') : '1.0.0';
-    $main_js_ver = file_exists(get_template_directory() . '/assets/js/main.js') ? filemtime(get_template_directory() . '/assets/js/main.js') : '1.0.0';
+    $theme_uri = set_url_scheme( get_template_directory_uri(), 'https' );
+    $stylesheet_uri = set_url_scheme( get_stylesheet_uri(), 'https' );
+    
+    // Force cache bust to resolve persistent browser caching issues
+    $cache_buster = time();
 
-    wp_enqueue_style( 'cmc-main-style', get_template_directory_uri() . '/assets/css/main.css', array(), $main_css_ver );
-    wp_enqueue_style( 'cmc-style', get_stylesheet_uri(), array(), $style_css_ver );
-    wp_enqueue_script( 'cmc-main-js', get_template_directory_uri() . '/assets/js/main.js', array(), $main_js_ver, true );
+    wp_enqueue_style( 'cmc-main-style', $theme_uri . '/assets/css/main.css', array(), $cache_buster );
+    wp_enqueue_style( 'cmc-style', $stylesheet_uri, array(), $cache_buster );
+    wp_enqueue_script( 'cmc-main-js', $theme_uri . '/assets/js/main.js', array(), $cache_buster, true );
 }
 add_action( 'wp_enqueue_scripts', 'cmc_enqueue_scripts' );
 
